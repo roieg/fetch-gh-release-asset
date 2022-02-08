@@ -1,11 +1,6 @@
-FROM alpine:latest
+FROM ubuntu:bionic
 
-RUN	apk add --no-cache \
-  bash \
-  ca-certificates \
-  curl \
-  wget \
-  jq
+RUN apt-get update ; apt-get install bash ca-certificates curl wget jq -y 
 
 COPY fetch_github_asset.sh /fetch_github_asset.sh
 
